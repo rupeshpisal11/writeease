@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — WriteEase AI</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .not-found-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      background: linear-gradient(165deg, #f9f9ff 0%, #eef2ff 60%, #f9f9ff 100%);
+    }
+    .not-found-number {
+      font-family: var(--font-serif);
+      font-size: clamp(80px, 15vw, 140px);
+      font-weight: 400;
+      color: var(--primary);
+      line-height: 1;
+      opacity: 0.15;
+      margin-bottom: -20px;
+      user-select: none;
+    }
+    .not-found-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
+    .not-found-page h1 {
+      font-size: clamp(22px, 4vw, 32px);
+      margin-bottom: 12px;
+    }
+    .not-found-page p {
+      color: var(--text-secondary);
+      font-size: 16px;
+      max-width: 420px;
+      margin-bottom: 32px;
+    }
+    .not-found-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .not-found-brand {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+<div class="not-found-page">
+  <a href="index.html" class="not-found-brand">
+    <svg viewBox="0 0 32 32" fill="none" width="26" height="26"><rect width="32" height="32" rx="8" fill="#3157D5"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="23" cy="22" r="3" fill="white"/></svg>
+    WriteEase AI
+  </a>
+  <div class="not-found-number">404</div>
+  <div class="not-found-icon">🔍</div>
+  <h1>Page not found</h1>
+  <p>The page you're looking for doesn't exist or may have been moved.</p>
+  <div class="not-found-actions">
+    <a href="index.html" class="btn btn-primary btn-lg">Go to Homepage</a>
+    <a href="tools.html" class="btn btn-outline btn-lg">Browse Tools</a>
+  </div>
+  <div style="margin-top:48px;padding:20px;background:white;border-radius:14px;border:1px solid var(--border);max-width:400px">
+    <p style="font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:12px">Quick Links</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+      <a href="paraphraser.html" class="badge badge-primary">Paraphraser</a>
+      <a href="humanizer.html" class="badge badge-purple">AI Humanizer</a>
+      <a href="grammar.html" class="badge badge-success">Grammar Fixer</a>
+      <a href="email.html" class="badge badge-warning">Email Writer</a>
+      <a href="pricing.html" class="badge badge-primary">Pricing</a>
+      <a href="login.html" class="badge" style="background:var(--bg-secondary);color:var(--text-primary)">Log in</a>
+    </div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

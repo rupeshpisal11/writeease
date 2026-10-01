@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing History — WriteEase AI</title>
+  <meta name="description" content="View, search, copy, and manage your complete AI writing generation history on WriteEase AI." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <style>
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+    .modal-container {
+      background: var(--bg-white);
+      border-radius: var(--radius-xl);
+      max-width: 660px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border);
+      animation: modalFadeIn 0.2s ease-out;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .animate-in {
+      animation: slideInUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes slideInUp {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .history-filter-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .history-filter-scroll::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body>
+<div class="app-layout">
+  <div class="app-sidebar" id="app-sidebar">
+    <div class="app-sidebar-logo">
+      <svg viewBox="0 0 32 32" fill="none" width="22" height="22"><rect width="32" height="32" rx="8" fill="#3157D5"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="23" cy="22" r="3" fill="white"/></svg>
+      WriteEase AI
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Overview</div>
+      <a href="dashboard.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Dashboard
+      </a>
+      <div class="sidebar-section-label" style="margin-top:12px">AI Tools</div>
+      <a href="paraphraser.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⟳</span> Paraphraser</a>
+      <a href="humanizer.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">☺</span> AI Humanizer</a>
+      <a href="grammar.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">✓</span> Grammar Fixer</a>
+      <a href="email.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">✉</span> Email Writer</a>
+      <a href="templates.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⊟</span> Templates</a>
+      <a href="plagiarism.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⊗</span> Plagiarism</a>
+      <div class="sidebar-section-label" style="margin-top:12px">Account</div>
+      <a href="history.html" class="sidebar-link active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        History
+      </a>
+      <a href="profile.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile
+      </a>
+      <a href="settings.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        Settings
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" data-action="logout" class="sidebar-link" style="color:var(--error)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Log out
+      </a>
+    </div>
+  </div>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <div class="app-main">
+    <div class="app-topbar">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <span class="app-topbar-title">Writing History</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="credit-widget"><div class="credit-dot" id="credit-dot"></div><span id="credit-count">10</span> credits</div>
+        <a href="profile.html"><div class="profile-avatar" style="width:34px;height:34px;font-size:14px" id="topbar-avatar">U</div></a>
+      </div>
+    </div>
+    <div class="app-content">
+      <!-- Top header with count badge and Clear All -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <h1 style="font-size:24px;font-weight:700;margin:0">Writing History</h1>
+          <span class="badge badge-primary" id="history-count-badge">0 items</span>
+        </div>
+        <button type="button" class="btn btn-outline btn-sm" id="clear-all-btn" style="color:var(--error);border-color:var(--error);display:none">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path></svg>
+          Clear All
+        </button>
+      </div>
+
+      <!-- Search input -->
+      <div class="search-input-wrap mb-16">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="history-search" class="form-control" placeholder="Search your history..." aria-label="Search your history" />
+      </div>
+
+      <!-- Filter chips row -->
+      <div class="history-filter-scroll tone-chips" id="filter-chips">
+        <button class="tone-chip selected" data-filter="All">All</button>
+        <button class="tone-chip" data-filter="Paraphraser">Paraphraser</button>
+        <button class="tone-chip" data-filter="AI Humanizer">AI Humanizer</button>
+        <button class="tone-chip" data-filter="Grammar Fixer">Grammar Fixer</button>
+        <button class="tone-chip" data-filter="Email Writer">Email Writer</button>
+        <button class="tone-chip" data-filter="Templates">Templates</button>
+        <button class="tone-chip" data-filter="Plagiarism Checker">Plagiarism Checker</button>
+      </div>
+
+      <!-- History list -->
+      <div id="history-list" style="display:flex;flex-direction:column;gap:12px"></div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="empty-state" style="display:none;background:var(--bg-white);border-radius:var(--radius-xl);border:1px dashed var(--border);padding:60px 24px;margin-top:10px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <h3>No history yet</h3>
+        <p>Use any AI tool to see your results here.</p>
+        <a href="paraphraser.html" class="btn btn-primary btn-sm" style="margin-top:16px">Start Writing</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Detail Modal -->
+<div class="modal-overlay" id="detail-modal" style="display:none;" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-container">
+    <div style="padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <span id="detail-tool-badge" class="badge badge-primary" style="margin-bottom:4px;display:inline-block">Tool</span>
+        <h3 style="font-size:18px;font-weight:700;margin:0" id="detail-title">Writing Detail</h3>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px" id="detail-date">Date</div>
+      </div>
+      <button type="button" id="detail-close-btn" aria-label="Close modal" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted);padding:4px 8px;border-radius:var(--radius-md);line-height:1">✕</button>
+    </div>
+    <div style="padding:20px 24px;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary);margin-bottom:6px">Original Input</h4>
+        <div id="detail-original" style="background:var(--bg-secondary);padding:14px;border-radius:var(--radius-md);font-size:14px;color:var(--text-secondary);white-space:pre-wrap;line-height:1.6;border:1px solid var(--border);word-break:break-word"></div>
+      </div>
+      <div>
+        <h4 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--primary);margin-bottom:6px">Generated Output</h4>
+        <div id="detail-result" style="background:var(--primary-light);padding:14px;border-radius:var(--radius-md);font-size:14px;color:var(--text-primary);white-space:pre-wrap;line-height:1.6;border:1px solid rgba(49,87,213,0.2);word-break:break-word"></div>
+      </div>
+    </div>
+    <div style="padding:16px 24px;border-top:1px solid var(--border);background:var(--bg-secondary);border-bottom-left-radius:var(--radius-xl);border-bottom-right-radius:var(--radius-xl);display:flex;justify-content:flex-end;gap:10px">
+      <button type="button" id="detail-modal-close-btn2" class="btn btn-outline btn-sm">Close</button>
+      <button type="button" id="detail-copy-btn" class="btn btn-primary btn-sm">Copy Result</button>
+    </div>
+  </div>
+</div>
+
+<nav class="app-mobile-nav">
+  <div class="app-mobile-nav-inner">
+    <a href="dashboard.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></a>
+    <a href="tools.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Tools</span></a>
+    <a href="history.html" class="app-mobile-nav-item active"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg><span>History</span></a>
+    <a href="profile.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></a>
+  </div>
+</nav>
+
+<script src="js/app.js"></script>
+<script>
+// Tool icon metadata map
+const TOOL_META_MAP = {
+  'Paraphraser':         { icon: '⟳', cls: 'tool-icon-blue', badge: 'badge-primary' },
+  'AI Humanizer':        { icon: '☺', cls: 'tool-icon-purple', badge: 'badge-purple' },
+  'Grammar Fixer':       { icon: '✓', cls: 'tool-icon-green', badge: 'badge-success' },
+  'Email Writer':        { icon: '✉', cls: 'tool-icon-amber', badge: 'badge-warning' },
+  'Plagiarism Checker':  { icon: '⊗', cls: 'tool-icon-pink', badge: 'badge-pink' },
+  'Templates':           { icon: '⊟', cls: 'tool-icon-cyan', badge: 'badge-cyan' },
+};
+
+let currentFilter = 'All';
+let currentSearch = '';
+let activeDetailResult = '';
+
+function getToolMeta(toolName) {
+  return TOOL_META_MAP[toolName] || { icon: '✎', cls: 'tool-icon-blue', badge: 'badge-primary' };
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function renderHistory(filter = currentFilter, search = currentSearch) {
+  currentFilter = filter;
+  currentSearch = search.trim().toLowerCase();
+
+  const allItems = History.get();
+  const listEl = document.getElementById('history-list');
+  const emptyEl = document.getElementById('empty-state');
+  const badgeEl = document.getElementById('history-count-badge');
+  const clearBtn = document.getElementById('clear-all-btn');
+
+  // Filter items
+  let filtered = allItems;
+  if (currentFilter !== 'All') {
+    filtered = filtered.filter(item => item.tool === currentFilter);
+  }
+  if (currentSearch) {
+    filtered = filtered.filter(item => {
+      const orig = (item.original || '').toLowerCase();
+      const res = (item.result || '').toLowerCase();
+      const tool = (item.tool || '').toLowerCase();
+      return orig.includes(currentSearch) || res.includes(currentSearch) || tool.includes(currentSearch);
+    });
+  }
+
+  // Update badge and Clear All visibility
+  if (badgeEl) badgeEl.textContent = `${filtered.length} item${filtered.length === 1 ? '' : 's'}`;
+  if (clearBtn) clearBtn.style.display = allItems.length > 0 ? 'inline-flex' : 'none';
+
+  // Toggle empty state
+  if (filtered.length === 0) {
+    listEl.innerHTML = '';
+    emptyEl.style.display = 'block';
+    if (allItems.length > 0 && currentSearch) {
+      emptyEl.querySelector('h3').textContent = 'No matching history found';
+      emptyEl.querySelector('p').textContent = `No results found for "${escapeHtml(currentSearch)}". Try a different search term.`;
+    } else {
+      emptyEl.querySelector('h3').textContent = 'No history yet';
+      emptyEl.querySelector('p').textContent = 'Use any AI tool to see your results here.';
+    }
+    return;
+  }
+
+  emptyEl.style.display = 'none';
+
+  listEl.innerHTML = filtered.map(item => {
+    const meta = getToolMeta(item.tool);
+    const dateFormatted = typeof formatDate === 'function' ? formatDate(item.date) : new Date(item.date).toLocaleString();
+    const previewText = item.original ? item.original.substring(0, 100) : (item.result ? item.result.substring(0, 100) : '');
+
+    return `
+      <div class='history-item animate-in' data-id='${item.id}'>
+        <div class='history-tool-icon ${meta.cls}'>${meta.icon}</div>
+        <div class='history-content'>
+          <div class='history-meta'>
+            <span class='history-tool-name'>${escapeHtml(item.tool)}</span>
+            <span class='history-date'>${escapeHtml(dateFormatted)}</span>
+          </div>
+          <div class='history-preview'>${escapeHtml(previewText)}${previewText.length >= 100 ? '...' : ''}</div>
+        </div>
+        <div class='history-actions'>
+          <button class='copy-btn' onclick='copyHistItem(${item.id})'>Copy</button>
+          <button class='btn btn-ghost btn-sm' onclick='viewHistItem(${item.id})'>View</button>
+          <button class='btn btn-ghost btn-sm' style='color:var(--error)' onclick='deleteHistItem(${item.id})'>Delete</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function viewHistItem(id) {
+  const items = History.get();
+  const item = items.find(i => i.id === id);
+  if (!item) return;
+
+  activeDetailResult = item.result || '';
+
+  const meta = getToolMeta(item.tool);
+  const modal = document.getElementById('detail-modal');
+  const badge = document.getElementById('detail-tool-badge');
+  const title = document.getElementById('detail-title');
+  const date = document.getElementById('detail-date');
+  const orig = document.getElementById('detail-original');
+  const res = document.getElementById('detail-result');
+
+  if (badge) {
+    badge.textContent = item.tool;
+    badge.className = `badge ${meta.badge}`;
+  }
+  if (title) title.textContent = `${item.tool} Result`;
+  if (date) date.textContent = typeof formatDate === 'function' ? formatDate(item.date) : new Date(item.date).toLocaleString();
+  if (orig) orig.textContent = item.original || '(No original text provided)';
+  if (res) res.textContent = item.result || '(No generated output)';
+
+  if (modal) {
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+  }
+}
+
+function closeDetailModal() {
+  const modal = document.getElementById('detail-modal');
+  if (modal) {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  }
+}
+
+function copyHistItem(id) {
+  const items = History.get();
+  const item = items.find(i => i.id === id);
+  if (item && item.result) {
+    copyText(item.result);
+  } else if (item && item.original) {
+    copyText(item.original);
+  } else {
+    showToast('Nothing to copy.', 'error');
+  }
+}
+
+function deleteHistItem(id) {
+  History.delete(id);
+  renderHistory();
+  showToast('Deleted item from history.', 'default');
+}
+
+function clearAll() {
+  if (confirm('Are you sure you want to clear your entire writing history? This action cannot be undone.')) {
+    History.clear();
+    renderHistory();
+    showToast('All history cleared.', 'default');
+  }
+}
+
+// Make functions global
+window.viewHistItem = viewHistItem;
+window.copyHistItem = copyHistItem;
+window.deleteHistItem = deleteHistItem;
+window.clearAll = clearAll;
+
+document.addEventListener('DOMContentLoaded', () => {
+  requireAuth();
+  initAppSidebar();
+
+  // Credit dot
+  const credits = Credits.get();
+  const dot = document.getElementById('credit-dot');
+  if (dot) {
+    if (credits <= 2) dot.classList.add('empty');
+    else if (credits <= 5) dot.classList.add('low');
+  }
+
+  // Initial render
+  renderHistory('All', '');
+
+  // Filter chips
+  const filterChips = document.querySelectorAll('#filter-chips .tone-chip');
+  filterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => c.classList.remove('selected'));
+      chip.classList.add('selected');
+      renderHistory(chip.dataset.filter, currentSearch);
+    });
+  });
+
+  // Debounced search
+  let searchTimeout = null;
+  const searchInput = document.getElementById('history-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        renderHistory(currentFilter, e.target.value);
+      }, 200);
+    });
+  }
+
+  // Clear all button
+  const clearBtn = document.getElementById('clear-all-btn');
+  if (clearBtn) clearBtn.addEventListener('click', clearAll);
+
+  // Modal close buttons
+  const detailModal = document.getElementById('detail-modal');
+  const closeBtn = document.getElementById('detail-close-btn');
+  const closeBtn2 = document.getElementById('detail-modal-close-btn2');
+  const copyDetailBtn = document.getElementById('detail-copy-btn');
+
+  if (closeBtn) closeBtn.addEventListener('click', closeDetailModal);
+  if (closeBtn2) closeBtn2.addEventListener('click', closeDetailModal);
+
+  if (detailModal) {
+    detailModal.addEventListener('click', (e) => {
+      if (e.target === detailModal) closeDetailModal();
+    });
+  }
+
+  if (copyDetailBtn) {
+    copyDetailBtn.addEventListener('click', () => {
+      if (activeDetailResult) {
+        copyText(activeDetailResult, copyDetailBtn);
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

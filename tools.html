@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Writing Tools — WriteEase AI</title>
+  <meta name="description" content="Six AI-powered writing tools — paraphraser, humanizer, grammar fixer, email writer, templates, plagiarism checker." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .tools-hero {
+      background: linear-gradient(165deg, #f9f9ff 0%, #eef2ff 100%);
+      padding: 96px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .tools-hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .tools-hero h1 {
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    .tools-hero p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .tools-hero .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .tool-helps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .tool-helps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .tool-help-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .tool-help-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .tool-help-card.help-paraphrase { border-left: 4px solid var(--tool-paraphrase); }
+    .tool-help-card.help-humanize { border-left: 4px solid var(--tool-humanize); }
+    .tool-help-card.help-grammar { border-left: 4px solid var(--tool-grammar); }
+    .tool-help-card.help-email { border-left: 4px solid var(--tool-email); }
+    .tool-help-card.help-templates { border-left: 4px solid var(--tool-templates); }
+    .tool-help-card.help-plagiarism { border-left: 4px solid var(--tool-plagiarism); }
+    .tool-help-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .tool-help-content h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .tool-help-content p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .cta-dark {
+      background: #171923;
+      color: #FFFFFF;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-dark h2 {
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .cta-dark p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 18px;
+      max-width: 580px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .cta-dark .btn-outline {
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+    }
+    .cta-dark .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #FFFFFF;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar"><div class="navbar-inner"><a href="index.html" class="navbar-brand"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><rect width="32" height="32" rx="8" fill="#3157D5"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="23" cy="22" r="3" fill="white"/></svg>WriteEase AI</a><div class="navbar-links"><a href="tools.html">Tools</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a></div><div class="navbar-actions"><a href="login.html" class="btn btn-ghost btn-sm">Log in</a><a href="register.html" class="btn btn-primary btn-sm">Start Free</a><button class="navbar-toggle" id="navbar-toggle" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav><div class="mobile-nav" id="mobile-nav"><div class="mobile-nav-panel"><div class="mobile-nav-header"><span style="color:var(--primary);font-weight:700">WriteEase AI</span><button id="mobile-nav-close" style="padding:6px;border-radius:8px;background:var(--bg-secondary)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div><a href="tools.html">Tools</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><div class="mobile-nav-divider"></div><a href="login.html">Log in</a><a href="register.html" style="color:var(--primary);font-weight:700">Start Free →</a></div></div>
+
+<!-- 1. Hero Section -->
+<section class="tools-hero">
+  <div class="container">
+    <div class="tools-hero-inner">
+      <div style="margin-bottom:20px">
+        <span class="badge badge-primary">All AI Tools</span>
+      </div>
+      <h1 class="display-lg">Six tools. One platform.</h1>
+      <p>From paraphrasing to plagiarism checking — everything you need to write with confidence.</p>
+      <div class="hero-actions">
+        <a href="register.html" class="btn btn-primary btn-xl">Start Writing Free</a>
+        <a href="login.html" class="btn btn-outline btn-xl">Log in</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Tools Grid Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="headline-lg">Explore all tools</h2>
+      <p>Choose an AI assistant designed to tackle your specific writing challenges.</p>
+    </div>
+    <div class="tools-grid">
+      <a href="paraphraser.html" class="tool-card">
+        <div class="tool-icon tool-icon-blue">⟳</div>
+        <div>
+          <h3>Paraphraser</h3>
+          <p>Rewrite your text with multiple tone options — standard, formal, casual, academic, creative, and concise.</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+      <a href="humanizer.html" class="tool-card">
+        <div class="tool-icon tool-icon-purple">☺</div>
+        <div>
+          <h3>AI Humanizer</h3>
+          <p>Transform AI-generated content into natural, human-like writing that sounds authentically you.</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+      <a href="grammar.html" class="tool-card">
+        <div class="tool-icon tool-icon-green">✓</div>
+        <div>
+          <h3>Grammar Fixer</h3>
+          <p>Detect and correct grammar errors, spelling mistakes, punctuation issues, and style problems.</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+      <a href="email.html" class="tool-card">
+        <div class="tool-icon tool-icon-amber">✉</div>
+        <div>
+          <h3>Email Writer</h3>
+          <p>Generate professional emails for any purpose — inquiries, applications, follow-ups, apologies, and more.</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+      <a href="templates.html" class="tool-card">
+        <div class="tool-icon tool-icon-cyan">⊟</div>
+        <div>
+          <h3>Writing Templates</h3>
+          <p>Access ready-to-use templates for college essays, job applications, professional documents, and social posts.</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+      <a href="plagiarism.html" class="tool-card">
+        <div class="tool-icon tool-icon-pink">⊗</div>
+        <div>
+          <h3>Plagiarism Checker</h3>
+          <p>Check your text for similarity against web sources and get an originality score (demo mode).</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. How Each Tool Helps You Section -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="headline-lg">How each tool helps you</h2>
+      <p>Discover how each dedicated AI module streamlines your daily writing and editing workflow.</p>
+    </div>
+    <div class="tool-helps-grid">
+      <!-- Paraphraser -->
+      <div class="tool-help-card help-paraphrase">
+        <div class="tool-help-icon tool-icon-blue">⟳</div>
+        <div class="tool-help-content">
+          <h3>Paraphraser</h3>
+          <p>Quickly rephrase sentences, paragraphs, or entire articles to match your desired tone and audience. Expand vocabulary and overcome repetitive phrasing while preserving your core meaning.</p>
+        </div>
+      </div>
+      <!-- AI Humanizer -->
+      <div class="tool-help-card help-humanize">
+        <div class="tool-help-icon tool-icon-purple">☺</div>
+        <div class="tool-help-content">
+          <h3>AI Humanizer</h3>
+          <p>Convert stiff and mechanical AI output into fluid, nuanced prose that reads genuinely human. Ensure your voice resonates naturally while bypassing common AI pattern markers.</p>
+        </div>
+      </div>
+      <!-- Grammar Fixer -->
+      <div class="tool-help-card help-grammar">
+        <div class="tool-help-icon tool-icon-green">✓</div>
+        <div class="tool-help-content">
+          <h3>Grammar Fixer</h3>
+          <p>Catch hidden punctuation slips, subject-verb disagreements, and awkward sentence structures on the fly. Receive clean, contextual corrections so your copy is always publication-ready.</p>
+        </div>
+      </div>
+      <!-- Email Writer -->
+      <div class="tool-help-card help-email">
+        <div class="tool-help-icon tool-icon-amber">✉</div>
+        <div class="tool-help-content">
+          <h3>Email Writer</h3>
+          <p>Produce polished, persuasive emails for job inquiries, networking, client requests, and follow-ups in seconds. Strike the perfect balance between courteous etiquette and impactful clarity.</p>
+        </div>
+      </div>
+      <!-- Writing Templates -->
+      <div class="tool-help-card help-templates">
+        <div class="tool-help-icon tool-icon-cyan">⊟</div>
+        <div class="tool-help-content">
+          <h3>Writing Templates</h3>
+          <p>Overcome the blank page with structured outlines and proven formats for essays, reports, and resumes. Fill in your key details and generate complete drafts in a fraction of the usual time.</p>
+        </div>
+      </div>
+      <!-- Plagiarism Checker -->
+      <div class="tool-help-card help-plagiarism">
+        <div class="tool-help-icon tool-icon-pink">⊗</div>
+        <div class="tool-help-content">
+          <h3>Plagiarism Checker</h3>
+          <p>Scan your drafts against online sources to ensure all information is original and properly referenced. Protect your academic and professional integrity with detailed originality feedback.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Bottom CTA Section -->
+<section class="cta-dark">
+  <div class="container">
+    <div style="max-width:680px;margin:0 auto">
+      <h2 class="headline-lg">Ready to start writing smarter?</h2>
+      <p>Join thousands of writers, students, and professionals who communicate better with WriteEase AI.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="register.html" class="btn btn-primary btn-xl">Start Writing Free</a>
+        <a href="pricing.html" class="btn btn-outline btn-xl">Explore Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-brand-name"><svg viewBox="0 0 32 32" fill="none" width="22" height="22"><rect width="32" height="32" rx="8" fill="white" fill-opacity="0.15"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="23" cy="22" r="3" fill="white"/></svg>WriteEase AI</div><p>Write smarter. Express better.</p></div><div class="footer-col"><h4>Tools</h4><a href="paraphraser.html">Paraphraser</a><a href="humanizer.html">AI Humanizer</a><a href="grammar.html">Grammar Fixer</a><a href="email.html">Email Writer</a><a href="templates.html">Templates</a><a href="plagiarism.html">Plagiarism Checker</a></div><div class="footer-col"><h4>Product</h4><a href="tools.html">All Tools</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="login.html">Log in</a><a href="register.html">Sign up</a></div><div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refund.html">Refund Policy</a></div></div><div class="footer-bottom"><span>© 2024 WriteEase AI. All rights reserved.</span><div style="display:flex;gap:16px"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
+
+<script src="js/app.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => { initMobileNav(); initFAQ(); });</script>
+</body>
+</html>

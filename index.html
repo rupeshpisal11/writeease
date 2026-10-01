@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WriteEase AI — Write smarter. Express better.</title>
+  <meta name="description" content="WriteEase AI gives you AI-powered writing tools — paraphraser, humanizer, grammar fixer, email writer, templates and plagiarism checker — all in one place." />
+  <meta name="keywords" content="AI writing, paraphraser, grammar checker, email writer, writing assistant, WriteEase" />
+  <meta property="og:title" content="WriteEase AI — Write smarter. Express better." />
+  <meta property="og:description" content="Write clearly, professionally, and confidently with AI-powered tools designed for everyday writing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rupeshpisal11.github.io/writeease/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand" aria-label="WriteEase AI Home">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#3157D5"/>
+        <path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="23" cy="22" r="3" fill="white"/>
+      </svg>
+      WriteEase AI
+    </a>
+    <div class="navbar-links" role="list">
+      <a href="tools.html" role="listitem">Tools</a>
+      <a href="pricing.html" role="listitem">Pricing</a>
+      <a href="faq.html" role="listitem">FAQ</a>
+    </div>
+    <div class="navbar-actions">
+      <a href="login.html" class="btn btn-ghost btn-sm" id="nav-login">Log in</a>
+      <a href="register.html" class="btn btn-primary btn-sm" id="nav-signup">Start Free</a>
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile menu">
+  <div class="mobile-nav-panel">
+    <div class="mobile-nav-header">
+      <span class="navbar-brand" style="color:var(--primary);font-weight:700;font-size:17px">WriteEase AI</span>
+      <button id="mobile-nav-close" aria-label="Close menu" style="padding:6px;border-radius:8px;background:var(--bg-secondary)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <a href="tools.html">Tools</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <div class="mobile-nav-divider"></div>
+    <a href="login.html">Log in</a>
+    <a href="register.html" style="color:var(--primary);font-weight:700">Start Free →</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow" role="doc-subtitle">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+        AI-Powered Writing Assistant
+      </div>
+      <h1 class="display-lg" id="hero-heading">Your words.<br>Refined by AI.</h1>
+      <p>Write clearly, professionally, and confidently with AI-powered tools designed for everyday writing.</p>
+      <div class="hero-actions">
+        <a href="register.html" class="btn btn-primary btn-xl">Start Writing Free</a>
+        <a href="tools.html" class="btn btn-outline btn-xl">Explore Tools</a>
+      </div>
+    </div>
+
+    <!-- Product Preview -->
+    <div class="hero-preview" aria-label="WriteEase AI product preview">
+      <div class="hero-preview-bar">
+        <div class="hero-preview-dot" style="background:#ff5f57"></div>
+        <div class="hero-preview-dot" style="background:#febc2e"></div>
+        <div class="hero-preview-dot" style="background:#28c840"></div>
+        <div class="hero-preview-url">app.writeease.ai/paraphraser</div>
+      </div>
+      <div style="padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px" class="hero-preview-grid">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px">Original Text</div>
+          <div style="background:var(--bg-secondary);border:1.5px solid var(--border);border-radius:10px;padding:14px;font-size:14px;color:var(--text-secondary);line-height:1.7;min-height:120px">I am looking for a job opportunity in the technology sector where I can utilize my skills in software development and contribute to meaningful projects.</div>
+          <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap">
+            <span style="padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;border:1.5px solid var(--primary);color:var(--primary);background:var(--primary-light)">Formal</span>
+            <span style="padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;border:1.5px solid var(--border);color:var(--text-secondary)">Casual</span>
+            <span style="padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;border:1.5px solid var(--border);color:var(--text-secondary)">Academic</span>
+          </div>
+          <button style="margin-top:12px;width:100%;padding:10px;background:var(--primary);color:white;border-radius:10px;font-size:14px;font-weight:600;border:none;cursor:pointer">Paraphrase →</button>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:8px">AI Result</div>
+          <div style="background:var(--primary-light);border:1.5px solid rgba(49,87,213,0.2);border-radius:10px;padding:14px;font-size:14px;color:var(--text-primary);line-height:1.7;min-height:120px">I am actively seeking a position within the technology sector where I can employ my software development expertise to contribute to impactful and meaningful initiatives.</div>
+          <div style="margin-top:10px;display:flex;gap:6px">
+            <span style="padding:5px 10px;background:var(--success-light);color:var(--success);border-radius:6px;font-size:12px;font-weight:600">✓ Formal tone</span>
+            <span style="padding:5px 10px;background:var(--bg-secondary);color:var(--text-muted);border-radius:6px;font-size:12px">32 words</span>
+          </div>
+          <button onclick="copyText('I am actively seeking a position within the technology sector where I can employ my software development expertise to contribute to impactful and meaningful initiatives.')" style="margin-top:12px;width:100%;padding:10px;background:var(--bg-secondary);color:var(--text-secondary);border-radius:10px;font-size:14px;font-weight:600;border:1.5px solid var(--border);cursor:pointer">Copy Result</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TOOLS SECTION ── -->
+<section class="section" aria-labelledby="tools-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge badge-primary">AI Tools</span>
+      <h2 class="headline-lg" id="tools-heading">Everything you need to write better</h2>
+      <p>Six powerful AI writing tools built for students, professionals, and everyone in between.</p>
+    </div>
+    <div class="tools-grid">
+      <a href="paraphraser.html" class="tool-card" aria-label="AI Paraphraser">
+        <div class="tool-icon tool-icon-blue">⟳</div>
+        <div>
+          <h3>AI Paraphraser</h3>
+          <p>Rewrite any text with multiple tone options — standard, formal, casual, academic, and creative.</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+      <a href="humanizer.html" class="tool-card" aria-label="AI Humanizer">
+        <div class="tool-icon tool-icon-purple">☺</div>
+        <div>
+          <h3>AI Humanizer</h3>
+          <p>Transform AI-generated text into natural, human-like writing that flows authentically.</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+      <a href="grammar.html" class="tool-card" aria-label="Grammar Fixer">
+        <div class="tool-icon tool-icon-green">✓</div>
+        <div>
+          <h3>Grammar Fixer</h3>
+          <p>Detect and fix grammar issues, spelling mistakes, and style inconsistencies instantly.</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+      <a href="email.html" class="tool-card" aria-label="Email Writer">
+        <div class="tool-icon tool-icon-amber">✉</div>
+        <div>
+          <h3>Email Writer</h3>
+          <p>Draft professional emails for any purpose — inquiries, follow-ups, complaints, and more.</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+      <a href="templates.html" class="tool-card" aria-label="Writing Templates">
+        <div class="tool-icon tool-icon-cyan">⊟</div>
+        <div>
+          <h3>Writing Templates</h3>
+          <p>Ready-to-use templates for college essays, job applications, professional documents, and more.</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+      <a href="plagiarism.html" class="tool-card" aria-label="Plagiarism Checker">
+        <div class="tool-icon tool-icon-pink">⊗</div>
+        <div>
+          <h3>Plagiarism Checker</h3>
+          <p>Scan your text for originality and get a detailed similarity report (demo mode).</p>
+        </div>
+        <span class="tool-card-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="section section-bg" aria-labelledby="how-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge badge-primary">How It Works</span>
+      <h2 class="headline-lg" id="how-heading">Three steps to better writing</h2>
+      <p>WriteEase AI is designed to be simple, fast, and effective — no learning curve required.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;max-width:900px;margin:0 auto">
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <div class="how-step-content">
+          <h3>Paste your text</h3>
+          <p>Enter or paste any text you want to improve into the tool of your choice.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <div class="how-step-content">
+          <h3>Choose your style</h3>
+          <p>Select a tone, purpose, or mode that matches what you need — formal, creative, concise, and more.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <div class="how-step-content">
+          <h3>Get your result</h3>
+          <p>Instantly receive a polished, AI-improved version. Copy it, use it, or refine it further.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BENEFITS ── -->
+<section class="section" aria-labelledby="benefits-heading">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+      <div>
+        <span class="badge badge-primary mb-16">Why WriteEase AI</span>
+        <h2 class="headline-lg mb-20" id="benefits-heading">Built for clarity, not complexity</h2>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:8px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:16px;flex-shrink:0">✎</div>
+            <div><h4 style="font-size:15px;font-weight:700;margin-bottom:4px">Multiple writing modes</h4><p style="font-size:14px;color:var(--text-secondary)">Switch between formal, casual, academic, creative, and concise — whatever the situation demands.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:8px;background:#ECFDF5;display:flex;align-items:center;justify-content:center;color:#059669;font-size:16px;flex-shrink:0">⚡</div>
+            <div><h4 style="font-size:15px;font-weight:700;margin-bottom:4px">Instant results</h4><p style="font-size:14px;color:var(--text-secondary)">No waiting. Get rewritten, improved, or generated text in seconds.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:8px;background:#F3EEFF;display:flex;align-items:center;justify-content:center;color:#712ae2;font-size:16px;flex-shrink:0">⊞</div>
+            <div><h4 style="font-size:15px;font-weight:700;margin-bottom:4px">All tools in one place</h4><p style="font-size:14px;color:var(--text-secondary)">No need to switch between multiple apps — everything you need is right here.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:8px;background:#FFFBEB;display:flex;align-items:center;justify-content:center;color:#D97706;font-size:16px;flex-shrink:0">☁</div>
+            <div><h4 style="font-size:15px;font-weight:700;margin-bottom:4px">History saved automatically</h4><p style="font-size:14px;color:var(--text-secondary)">Every result is saved to your history so you can always go back and find previous outputs.</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--bg-secondary);border-radius:20px;padding:32px;border:1px solid var(--border)">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:16px">Live Demo — Grammar Fixer</div>
+        <div style="background:var(--bg-white);border-radius:10px;padding:14px;font-size:14px;line-height:1.8;color:var(--text-primary);border:1.5px solid var(--border);margin-bottom:12px">
+          Their going to the store alot, but <span style="background:#fff3cd;border-bottom:2px solid #D97706">they should of</span> waited for us.
+        </div>
+        <div style="background:#ECFDF5;border-radius:10px;padding:14px;font-size:14px;line-height:1.8;color:var(--text-primary);border:1.5px solid rgba(5,150,105,0.3);margin-bottom:12px">
+          They're going to the store a lot, but they should have waited for us.
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="background:var(--bg-white);border-left:3px solid #D97706;padding:10px 12px;border-radius:6px;font-size:13px">
+            <span style="color:#D97706;font-weight:700">Homophone Error:</span> "Their" → "They're"
+          </div>
+          <div style="background:var(--bg-white);border-left:3px solid #D97706;padding:10px 12px;border-radius:6px;font-size:13px">
+            <span style="color:#D97706;font-weight:700">Spelling:</span> "alot" → "a lot"
+          </div>
+          <div style="background:var(--bg-white);border-left:3px solid #D97706;padding:10px 12px;border-radius:6px;font-size:13px">
+            <span style="color:#D97706;font-weight:700">Modal Error:</span> "should of" → "should have"
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING PREVIEW ── -->
+<section class="section section-bg" aria-labelledby="pricing-preview-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge badge-primary">Pricing</span>
+      <h2 class="headline-lg" id="pricing-preview-heading">Simple, transparent pricing</h2>
+      <p>Start free. Upgrade when you need more. No hidden fees.</p>
+    </div>
+    <div class="pricing-grid" style="max-width:800px;margin:0 auto">
+      <div class="pricing-card">
+        <h3>Free</h3>
+        <p style="font-size:14px;color:var(--text-secondary)">Perfect for occasional writers</p>
+        <div class="pricing-price">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-amount">0</span>
+          <span class="pricing-period">/month</span>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 10 AI requests per day</li>
+          <li><span class="check">✓</span> All 6 writing tools</li>
+          <li><span class="check">✓</span> Writing history (30 days)</li>
+          <li><span class="cross" style="color:var(--text-muted)">✗</span> <span style="color:var(--text-muted)">Unlimited requests</span></li>
+          <li><span class="cross" style="color:var(--text-muted)">✗</span> <span style="color:var(--text-muted)">Priority processing</span></li>
+        </ul>
+        <a href="register.html" class="btn btn-outline btn-block">Get started free</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-featured-badge">MOST POPULAR</div>
+        <h3>Pro</h3>
+        <p style="font-size:14px;color:var(--text-secondary)">For professionals and students</p>
+        <div class="pricing-price">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-amount">9</span>
+          <span class="pricing-period">/month</span>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Unlimited AI requests</li>
+          <li><span class="check">✓</span> All 6 writing tools</li>
+          <li><span class="check">✓</span> Full history archive</li>
+          <li><span class="check">✓</span> Priority processing</li>
+          <li><span class="check">✓</span> Advanced tone controls</li>
+        </ul>
+        <a href="pricing.html" class="btn btn-primary btn-block">View Pro plans</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:24px;font-size:13px;color:var(--text-muted)">No credit card required for free plan · Cancel anytime</p>
+  </div>
+</section>
+
+<!-- ── FAQ PREVIEW ── -->
+<section class="section" aria-labelledby="faq-preview-heading">
+  <div class="container" style="max-width:760px">
+    <div class="section-header">
+      <span class="badge badge-primary">FAQ</span>
+      <h2 class="headline-lg" id="faq-preview-heading">Frequently asked questions</h2>
+    </div>
+    <div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Is WriteEase AI free to use? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes! WriteEase AI has a free plan that gives you 10 AI requests per day with access to all 6 writing tools. No credit card required. Upgrade to Pro for unlimited access.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Does it work for academic writing? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Absolutely. WriteEase AI includes an Academic tone mode in the Paraphraser and Grammar Fixer, and the Templates section includes college essays, research summaries, and academic reports.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Is my writing data private? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Your writing is processed to generate results and is stored in your browser's local storage for history. We do not sell your data or use it to train AI models without consent. See our <a href="privacy.html">Privacy Policy</a> for full details.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Is the plagiarism checker accurate? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>The current plagiarism checker is a demo tool that simulates similarity checking. It provides a realistic example of how results would look. A real plagiarism API can be connected in the Pro version.</p></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <a href="faq.html" class="btn btn-outline">View all questions →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="section" style="background:linear-gradient(135deg,var(--primary) 0%,#1e3fa8 100%);color:white" aria-labelledby="cta-heading">
+  <div class="container" style="text-align:center;max-width:640px">
+    <h2 class="headline-lg mb-16" id="cta-heading" style="color:white">Start writing smarter today</h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:17px;margin-bottom:32px">Join thousands of writers, students, and professionals who use WriteEase AI to communicate more effectively.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="register.html" class="btn btn-xl" style="background:white;color:var(--primary);border-color:white">Start Writing Free</a>
+      <a href="tools.html" class="btn btn-xl btn-outline" style="border-color:rgba(255,255,255,0.5);color:white">Explore Tools</a>
+    </div>
+    <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-top:20px">Free forever plan available · No credit card required</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><rect width="32" height="32" rx="8" fill="white" fill-opacity="0.15"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="23" cy="22" r="3" fill="white"/></svg>
+          WriteEase AI
+        </div>
+        <p>Write smarter. Express better. AI-powered writing tools for everyone.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="paraphraser.html">Paraphraser</a>
+        <a href="humanizer.html">AI Humanizer</a>
+        <a href="grammar.html">Grammar Fixer</a>
+        <a href="email.html">Email Writer</a>
+        <a href="templates.html">Templates</a>
+        <a href="plagiarism.html">Plagiarism Checker</a>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="tools.html">All Tools</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="login.html">Log in</a>
+        <a href="register.html">Sign up</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund.html">Refund Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 WriteEase AI. All rights reserved.</span>
+      <div style="display:flex;gap:16px">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+  // Update nav based on login status
+  document.addEventListener('DOMContentLoaded', () => {
+    if (Auth.isLoggedIn()) {
+      const loginBtn = document.getElementById('nav-login');
+      const signupBtn = document.getElementById('nav-signup');
+      if (loginBtn) { loginBtn.textContent = 'Dashboard'; loginBtn.href = 'dashboard.html'; }
+      if (signupBtn) { signupBtn.textContent = 'Open App'; signupBtn.href = 'dashboard.html'; }
+    }
+  });
+</script>
+</body>
+</html>

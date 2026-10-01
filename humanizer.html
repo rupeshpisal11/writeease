@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Humanizer — WriteEase AI</title>
+  <meta name="description" content="Make AI-generated text sound natural and human." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+<div class="app-layout">
+  <!-- Sidebar -->
+  <div class="app-sidebar" id="app-sidebar">
+    <div class="app-sidebar-logo">
+      <svg viewBox="0 0 32 32" fill="none" width="22" height="22"><rect width="32" height="32" rx="8" fill="#3157D5"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="23" cy="22" r="3" fill="white"/></svg>
+      WriteEase AI
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Overview</div>
+      <a href="dashboard.html" class="sidebar-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Dashboard</a>
+      <div class="sidebar-section-label" style="margin-top:12px">AI Tools</div>
+      <a href="paraphraser.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⟳</span> Paraphraser</a>
+      <a href="humanizer.html" class="sidebar-link active"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">☺</span> AI Humanizer</a>
+      <a href="grammar.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">✓</span> Grammar Fixer</a>
+      <a href="email.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">✉</span> Email Writer</a>
+      <a href="templates.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⊟</span> Templates</a>
+      <a href="plagiarism.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⊗</span> Plagiarism</a>
+      <div class="sidebar-section-label" style="margin-top:12px">Account</div>
+      <a href="history.html" class="sidebar-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>History</a>
+      <a href="profile.html" class="sidebar-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+      <a href="settings.html" class="sidebar-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Settings</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" data-action="logout" class="sidebar-link" style="color:var(--error)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Log out</a>
+    </div>
+  </div>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <!-- Main Content -->
+  <div class="app-main">
+    <div class="app-topbar">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div class="tool-icon tool-icon-purple" style="width:32px;height:32px;font-size:14px">☺</div>
+          <span class="app-topbar-title">AI Humanizer</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="credit-widget"><div class="credit-dot" id="credit-dot"></div><span id="credit-count">10</span> credits</div>
+        <a href="profile.html"><div class="profile-avatar" style="width:34px;height:34px;font-size:14px" id="topbar-avatar">U</div></a>
+      </div>
+    </div>
+
+    <div class="app-content">
+      <!-- Info Alert -->
+      <div class="alert alert-demo" style="margin-bottom:20px">
+        <span style="font-size:18px">☺</span>
+        <div>AI Humanizer transforms AI-generated text into natural, human-sounding writing by adding contractions, sentence variety, and natural connectors.</div>
+      </div>
+
+      <!-- Humanization Style Selector -->
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+        <label for="human-style" style="font-size:13px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.06em">Humanization Style:</label>
+        <select id="human-style" class="form-select" style="max-width:240px;padding:8px 14px;border:1.5px solid var(--border);border-radius:var(--radius-md);font-family:inherit;font-size:14px;background:var(--bg-white);color:var(--text-primary);cursor:pointer">
+          <option value="natural" selected>Natural</option>
+          <option value="conversational">Conversational</option>
+          <option value="warm">Warm</option>
+        </select>
+      </div>
+
+      <!-- Tool Editor -->
+      <div class="tool-editor">
+        <!-- Input Panel -->
+        <div class="tool-panel">
+          <div class="tool-panel-header">
+            <h3>AI-Generated Text</h3>
+            <span class="char-count" id="human-char-count">0 characters</span>
+          </div>
+          <div class="tool-panel-body">
+            <textarea class="tool-textarea" id="human-input" placeholder="Paste AI-generated text here...
+
+Example: The utilization of advanced computational algorithms facilitates the optimization of workflow processes." aria-label="AI-generated text"></textarea>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn btn-primary" id="human-btn">☺ Humanize Text</button>
+              <button class="btn btn-ghost btn-sm" id="clear-btn">Clear</button>
+              <button class="btn btn-ghost btn-sm" id="sample-btn">Try sample text</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result Panel -->
+        <div class="tool-panel">
+          <div class="tool-panel-header">
+            <h3>Humanized Result</h3>
+            <div style="display:flex;gap:8px">
+              <button class="copy-btn" id="copy-human-btn">Copy</button>
+            </div>
+          </div>
+          <div class="tool-panel-body">
+            <div class="tool-result empty" id="human-result" aria-live="polite" aria-label="Humanized result">
+              <div>
+                <div style="font-size:32px;margin-bottom:8px">☺</div>
+                <p>Your humanized text will appear here.</p>
+                <p style="font-size:12px;margin-top:4px;color:var(--text-muted)">Paste AI-written content and click Humanize Text</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Card -->
+      <div style="margin-top:20px;padding:14px 18px;background:var(--bg-secondary);border-radius:10px;font-size:13px;color:var(--text-secondary);border:1px solid var(--border)">
+        <strong>Tip:</strong> AI detectors look for repetitive structure and rigid formal vocabulary. Humanizer breaks predictable patterns for a warm, natural flow. Each run costs 1 credit.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Navigation -->
+<nav class="app-mobile-nav">
+  <div class="app-mobile-nav-inner">
+    <a href="dashboard.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></a>
+    <a href="tools.html" class="app-mobile-nav-item active"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Tools</span></a>
+    <a href="history.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg><span>History</span></a>
+    <a href="profile.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></a>
+  </div>
+</nav>
+
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  requireAuth();
+  initAppSidebar();
+
+  let currentResult = '';
+
+  // Update credit count
+  const credits = Credits.get();
+  const creditCountEl = document.getElementById('credit-count');
+  const creditDotEl = document.getElementById('credit-dot');
+  if (creditCountEl) creditCountEl.textContent = credits;
+  if (creditDotEl) {
+    if (credits <= 2) creditDotEl.classList.add('empty');
+    else if (credits <= 5) creditDotEl.classList.add('low');
+  }
+
+  // Character counter
+  initCharCount('human-input', 'human-char-count');
+
+  // Sample text
+  const sampleText = 'The utilization of advanced computational algorithms facilitates the optimization of workflow processes, thereby enhancing organizational productivity and operational efficiency.';
+  document.getElementById('sample-btn').addEventListener('click', () => {
+    const inputEl = document.getElementById('human-input');
+    inputEl.value = sampleText;
+    document.getElementById('human-char-count').textContent = sampleText.length + ' characters';
+  });
+
+  // Clear button
+  document.getElementById('clear-btn').addEventListener('click', () => {
+    document.getElementById('human-input').value = '';
+    document.getElementById('human-char-count').textContent = '0 characters';
+    resetResult();
+  });
+
+  function resetResult() {
+    const resultEl = document.getElementById('human-result');
+    resultEl.className = 'tool-result empty';
+    resultEl.innerHTML = '<div><div style="font-size:32px;margin-bottom:8px">☺</div><p>Your humanized text will appear here.</p><p style="font-size:12px;margin-top:4px;color:var(--text-muted)">Paste AI-written content and click Humanize Text</p></div>';
+    currentResult = '';
+  }
+
+  // Humanize button
+  document.getElementById('human-btn').addEventListener('click', async () => {
+    const input = document.getElementById('human-input').value.trim();
+    const style = document.getElementById('human-style').value;
+
+    if (!input) {
+      showToast('Please enter some AI-generated text to humanize.', 'error');
+      return;
+    }
+    if (input.split(/\s+/).filter(Boolean).length < 3) {
+      showToast('Please enter at least 3 words.', 'error');
+      return;
+    }
+
+    if (!Credits.use()) {
+      showToast('No credits remaining. Please upgrade or wait for daily reset.', 'error');
+      return;
+    }
+    document.getElementById('credit-count').textContent = Credits.get();
+
+    const btn = document.getElementById('human-btn');
+    setLoading(btn, true);
+
+    const resultEl = document.getElementById('human-result');
+    resultEl.className = 'tool-result';
+    resultEl.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;gap:12px"><div class="loading-dots"><span></span><span></span><span></span></div><p style="font-size:13px;color:var(--text-muted)">Humanizing text with ' + style + ' style…</p></div>';
+
+    await AIDemo.delay(1200 + Math.random() * 800);
+
+    // Call AIDemo humanizer engine
+    let transformed = AIDemo.humanize(input);
+    if (style === 'conversational') {
+      transformed = transformed.replace(/Furthermore,/g, 'Also,').replace(/Additionally,/g, 'Plus,');
+    } else if (style === 'warm') {
+      transformed = transformed.replace(/In summary,/g, 'All in all,').replace(/facilitates/g, 'makes easier');
+    }
+    currentResult = transformed;
+
+    resultEl.className = 'tool-result animate-in';
+    resultEl.textContent = currentResult;
+
+    setLoading(btn, false);
+
+    // Save to history
+    History.add({ tool: 'AI Humanizer', original: input, result: currentResult, style: style });
+    showToast('Text humanized successfully!', 'success');
+  });
+
+  // Copy button
+  document.getElementById('copy-human-btn').addEventListener('click', () => {
+    if (!currentResult) {
+      showToast('Nothing to copy yet.', 'error');
+      return;
+    }
+    copyText(currentResult, document.getElementById('copy-human-btn'));
+  });
+});
+</script>
+</body>
+</html>

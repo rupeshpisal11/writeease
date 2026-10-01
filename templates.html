@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing Templates — WriteEase AI</title>
+  <meta name="description" content="Explore professionally crafted writing templates for college essays, job applications, business proposals, and emails." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <style>
+    .badge-blue { background: var(--primary-light); color: var(--primary); }
+    .badge-amber { background: var(--warning-light); color: var(--warning); }
+    .badge-green { background: var(--success-light); color: var(--success); }
+    .template-category-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .template-category-row::-webkit-scrollbar { display: none; }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+    .modal-container {
+      background: var(--bg-white);
+      border-radius: var(--radius-xl);
+      max-width: 660px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border);
+      animation: modalFadeIn 0.2s ease-out;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<div class="app-layout">
+  <div class="app-sidebar" id="app-sidebar">
+    <div class="app-sidebar-logo">
+      <svg viewBox="0 0 32 32" fill="none" width="22" height="22"><rect width="32" height="32" rx="8" fill="#3157D5"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="23" cy="22" r="3" fill="white"/></svg>
+      WriteEase AI
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Overview</div>
+      <a href="dashboard.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Dashboard
+      </a>
+      <div class="sidebar-section-label" style="margin-top:12px">AI Tools</div>
+      <a href="paraphraser.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⟳</span> Paraphraser</a>
+      <a href="humanizer.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">☺</span> AI Humanizer</a>
+      <a href="grammar.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">✓</span> Grammar Fixer</a>
+      <a href="email.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">✉</span> Email Writer</a>
+      <a href="templates.html" class="sidebar-link active"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⊟</span> Templates</a>
+      <a href="plagiarism.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⊗</span> Plagiarism</a>
+      <div class="sidebar-section-label" style="margin-top:12px">Account</div>
+      <a href="history.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        History
+      </a>
+      <a href="profile.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile
+      </a>
+      <a href="settings.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        Settings
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" data-action="logout" class="sidebar-link" style="color:var(--error)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Log out
+      </a>
+    </div>
+  </div>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <div class="app-main">
+    <div class="app-topbar">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <span class="app-topbar-title">Writing Templates</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="credit-widget"><div class="credit-dot" id="credit-dot"></div><span id="credit-count">10</span> credits</div>
+        <a href="profile.html"><div class="profile-avatar" style="width:34px;height:34px;font-size:14px" id="topbar-avatar">U</div></a>
+      </div>
+    </div>
+    <div class="app-content">
+      <!-- Page Header -->
+      <div style="margin-bottom:24px">
+        <h1 style="font-size:24px;font-weight:700;margin-bottom:6px">Curated Writing Templates</h1>
+        <p style="font-size:14px;color:var(--text-secondary)">Select any template to customize, preview, copy, or save straight to your writing history.</p>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="template-category-row" role="tablist" aria-label="Filter templates by category">
+        <button class="template-category-tab active" data-category="All" role="tab" aria-selected="true">All</button>
+        <button class="template-category-tab" data-category="College" role="tab" aria-selected="false">College</button>
+        <button class="template-category-tab" data-category="Jobs" role="tab" aria-selected="false">Jobs</button>
+        <button class="template-category-tab" data-category="Email" role="tab" aria-selected="false">Email</button>
+        <button class="template-category-tab" data-category="Professional" role="tab" aria-selected="false">Professional</button>
+        <button class="template-category-tab" data-category="Personal" role="tab" aria-selected="false">Personal</button>
+        <button class="template-category-tab" data-category="Social" role="tab" aria-selected="false">Social</button>
+      </div>
+
+      <!-- Template Grid -->
+      <div class="template-grid" id="template-grid">
+        <!-- 1. College Admission Essay -->
+        <div class="template-card" data-category="College" onclick="useTemplate('College Admission Essay', `Finding Purpose Through Curiosity and Resilience
+
+Ever since I first encountered [Subject/Field or Challenge], I realized that genuine curiosity is more than an academic interest—it is a responsibility. Growing up in [Hometown/Background], I was consistently drawn to solving multifaceted problems, whether that meant [Specific Example of Project or Activity] or tutoring younger students in [Skill Area].
+
+One pivotal moment that shaped my trajectory occurred when [Describe a Defining Challenge, Experiment, or Turning Point]. This experience challenged my preconceptions, requiring resilience, adaptable problem-solving, and disciplined self-reflection. Instead of deterring me, it reinforced my determination to pursue [Intended Major/Field] at [University Name].
+
+At [University Name], I am eager to contribute to [Specific Lab, Student Organization, or Initiative] under faculty such as [Professor Name or Academic Department]. I bring an unyielding dedication to inquiry and a collaborative drive to make a tangible, positive difference.`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-blue" style="width:36px;height:36px;font-size:15px">🎓</div>
+            <span class="badge badge-primary badge-blue">College</span>
+          </div>
+          <h4>College Admission Essay</h4>
+          <p>Personal statement for university applications</p>
+        </div>
+
+        <!-- 2. Scholarship Application -->
+        <div class="template-card" data-category="College" onclick="useTemplate('Scholarship Application', `Dear Scholarship Selection Committee,
+
+I am writing to respectfully submit my application for the [Scholarship Name]. As a dedicated student pursuing my degree in [Major/Field of Study] at [College/University], this award represents a crucial milestone toward fulfilling my educational and professional aspirations.
+
+Throughout my academic career, I have maintained a [GPA/Standing] while actively engaging in [Extracurricular Leadership, Research, or Community Service]. Financial constraints have presented real obstacles, but they have also forged my discipline and appreciation for every learning opportunity. Receiving the [Scholarship Name] will alleviate [Specific Expense, e.g., tuition costs, laboratory fees], allowing me to devote my undivided focus to [Specific Research Project or Course of Study].
+
+My ultimate career goal is to [Long-Term Career Objective and Impact on Society]. With your generous support, I will be one step closer to realizing this vision. Thank you for your time, consideration, and dedication to investing in aspiring scholars.
+
+Sincerely,
+[Your Name]
+[Contact Information / Student ID]`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-blue" style="width:36px;height:36px;font-size:15px">📜</div>
+            <span class="badge badge-primary badge-blue">College</span>
+          </div>
+          <h4>Scholarship Application</h4>
+          <p>Make your scholarship application stand out</p>
+        </div>
+
+        <!-- 3. Job Cover Letter -->
+        <div class="template-card" data-category="Jobs" onclick="useTemplate('Job Cover Letter', `Dear [Hiring Manager Name or Recruitment Team],
+
+I am writing to express my enthusiastic interest in the [Job Title] role at [Company Name], as advertised on [Job Board or Platform]. With over [Number] years of professional experience in [Industry/Specialization], complemented by my proven track record in [Key Skill 1] and [Key Skill 2], I am confident in my ability to make an immediate impact on your team.
+
+In my previous position as [Previous Title] at [Previous Company], I spearheaded [Major Project or Initiative], which resulted in [Quantifiable Result, e.g., a 28% increase in operational throughput]. My background in [Core Competency] has taught me how to solve complex challenges, align diverse stakeholders, and deliver measurable outcomes on tight deadlines.
+
+I have long admired [Company Name]’s leadership in [Industry or Recent Innovation], and I would be thrilled to bring my passion and expertise to your esteemed organization. I welcome the opportunity to discuss how my qualifications align with your strategic roadmap.
+
+Thank you for your time and consideration.
+
+Warm regards,
+[Your Full Name]
+[Phone Number] | [LinkedIn Profile URL]`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-amber" style="width:36px;height:36px;font-size:15px">💼</div>
+            <span class="badge badge-warning badge-amber">Jobs</span>
+          </div>
+          <h4>Job Cover Letter</h4>
+          <p>Professional cover letter for job applications</p>
+        </div>
+
+        <!-- 4. LinkedIn Summary -->
+        <div class="template-card" data-category="Jobs" onclick="useTemplate('LinkedIn Summary', `🚀 Passionate [Current Title / Industry Focus] | Helping [Target Audience] achieve [Core Value Proposition]
+
+With [Number]+ years of dedicated experience across [Key Domains], I specialize in turning complex challenges into scalable, high-performance solutions. My core skill set spans [Skill 1], [Skill 2], [Skill 3], and strategic team leadership.
+
+💡 What I Bring to the Table:
+• Strategic execution across [Domain or Department]
+• Designing efficient workflows that elevate [Key Metric or Business Outcome]
+• Mentoring and empowering cross-functional teams to build impactful products
+
+🏆 Selected Milestones:
+• Led [Key Project/Initiative], driving [Measurable Result or Metric]
+• Recognized with [Industry Award / Certification / Feature]
+
+Always excited to connect with fellow innovators, discuss emerging trends in [Field], or explore collaborative opportunities.
+
+📬 Reach me at: [Your Email Address]
+🔗 Portfolio / Personal Site: [Website URL]`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-amber" style="width:36px;height:36px;font-size:15px">🌐</div>
+            <span class="badge badge-warning badge-amber">Jobs</span>
+          </div>
+          <h4>LinkedIn Summary</h4>
+          <p>Craft your professional LinkedIn bio</p>
+        </div>
+
+        <!-- 5. Professional Email -->
+        <div class="template-card" data-category="Email" onclick="useTemplate('Professional Email', `Subject: [Action / Update] regarding [Project / Initiative Name]
+
+Dear [Recipient Name],
+
+I hope this email finds you well.
+
+I am writing to share a brief update on [Project / Deliverable Name] and confirm the next steps for our upcoming milestone. 
+
+Key Points & Current Status:
+1. [Milestone 1]: Successfully finalized and approved by the core team.
+2. [Action Item]: We require your review and sign-off on [Specific Document/Decision] by [Target Date].
+3. [Next Milestone]: Scheduled to kick off on [Date] upon completion of the above.
+
+Please let me know if you would like to schedule a 15-minute sync on [Day of Week] at [Preferred Time] to review any questions. Alternatively, you can reply directly to this thread with your feedback.
+
+Thank you for your continued partnership and guidance.
+
+Best regards,
+[Your Full Name]
+[Your Title] | [Company / Organization]`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-cyan" style="width:36px;height:36px;font-size:15px">✉</div>
+            <span class="badge badge-cyan">Email</span>
+          </div>
+          <h4>Professional Email</h4>
+          <p>Formal email for business communication</p>
+        </div>
+
+        <!-- 6. Follow-up Email -->
+        <div class="template-card" data-category="Email" onclick="useTemplate('Follow-up Email', `Subject: Following up on [Meeting Topic / Job Application / Proposal]
+
+Dear [Recipient Name],
+
+I hope you are having a productive week.
+
+I am following up on our conversation regarding [Subject / Position / Proposal] on [Date of Interaction]. I thoroughly enjoyed discussing [Key Point or Common Goal], and our dialogue reinforced my excitement about the potential to collaborate with [Company Name].
+
+As discussed, I have [Mention Attached Document, Portfolio Link, or Completed Action Item]. Please let me know if any additional details or context would be helpful on your end.
+
+I look forward to hearing about the next steps whenever your schedule allows.
+
+Warm regards,
+[Your Name]
+[Your Title / Contact Details]`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-cyan" style="width:36px;height:36px;font-size:15px">📬</div>
+            <span class="badge badge-cyan">Email</span>
+          </div>
+          <h4>Follow-up Email</h4>
+          <p>Follow up on applications or meetings</p>
+        </div>
+
+        <!-- 7. Business Proposal -->
+        <div class="template-card" data-category="Professional" onclick="useTemplate('Business Proposal', `EXECUTIVE BUSINESS PROPOSAL
+
+Project Title: [Title of Proposal]
+Prepared For: [Client or Organization Name]
+Prepared By: [Your Name or Agency Name]
+Date: [Date]
+
+1. Problem Statement & Opportunity:
+[Client Name] is currently navigating [Specific Challenge, e.g., inefficient workflows or market competition], resulting in [Adverse Impact, e.g., increased costs or lost customer engagement]. Addressing this presents a valuable opportunity to achieve [Target Goal].
+
+2. Proposed Solution:
+We recommend implementing [Solution Name], a tailored, phased strategy engineered to optimize [Target Objective] while maintaining operational continuity.
+
+3. Scope of Work & Deliverables:
+• Phase 1: Comprehensive Discovery & Workflow Audit (Weeks 1–2)
+• Phase 2: System Architecture & Solution Deployment (Weeks 3–6)
+• Phase 3: Quality Assurance, Staff Onboarding & Handover (Weeks 7–8)
+
+4. Expected Return on Investment:
+• Anticipated [Percentage]% improvement in operational efficiency
+• Projected cost reduction of [Estimate or Range] within the first fiscal quarter
+
+5. Recommended Next Steps:
+We welcome the opportunity to review this proposal in detail during our briefing on [Date]. Upon authorization, onboarding can commence within 5 business days.`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-purple" style="width:36px;height:36px;font-size:15px">📊</div>
+            <span class="badge badge-purple">Professional</span>
+          </div>
+          <h4>Business Proposal</h4>
+          <p>Pitch your idea or service professionally</p>
+        </div>
+
+        <!-- 8. Project Report -->
+        <div class="template-card" data-category="Professional" onclick="useTemplate('Project Report', `COMPREHENSIVE PROJECT PROGRESS REPORT
+
+Project Name: [Project Title]
+Lead: [Your Name / Team Lead]
+Reporting Window: [Start Date] – [End Date]
+Overall Health: [On Track / At Risk / Complete]
+
+1. Executive Summary:
+During this reporting cycle, the project achieved several critical objectives, remaining firmly on schedule toward the target delivery date of [Final Deadline].
+
+2. Key Accomplishments:
+• Finalized development of [Component / Deliverable A]
+• Successfully conducted stakeholder validation, scoring a [Metric or Satisfaction Score]
+• Mitigated high-priority blockers in [Specific Technical or Operational Area]
+
+3. Roadblocks & Risk Mitigation:
+• Identified Risk: [Brief description of obstacle or resource constraint]
+• Action Taken: [Mitigation protocol executed or planned workaround]
+
+4. Near-Term Milestones:
+• Roll out [Component B] to beta testing cohort by [Date]
+• Conduct final security audit and compliance verification
+
+Respectfully submitted,
+[Your Name], Project Lead`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-purple" style="width:36px;height:36px;font-size:15px">📋</div>
+            <span class="badge badge-purple">Professional</span>
+          </div>
+          <h4>Project Report</h4>
+          <p>Document project progress and findings</p>
+        </div>
+
+        <!-- 9. Personal Statement -->
+        <div class="template-card" data-category="Personal" onclick="useTemplate('Personal Statement', `The milestones that truly define our character are rarely the easiest ones. My journey toward [Field or Calling] began not in a formal lecture hall, but in [Origin Moment or Personal Background]. It was there that I first understood the profound impact of [Core Value, e.g., active listening, disciplined perseverance, or creative problem-solving].
+
+Over the years, I have navigated complex transitions, from [Challenge or Life Event 1] to [Challenge or Life Event 2]. Rather than viewing obstacles as limits, I learned to treat them as catalysts for growth. Through continuous learning, I honed my ability to adapt under pressure and cultivate genuine empathy for the people I work alongside.
+
+Looking toward the future, my goal is to dedicate my energy toward [Primary Vision or Life Mission]. I bring an authentic voice, a deep-seated work ethic, and an enduring belief that dedication, paired with purposeful collaboration, can overcome any hurdle.`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-green" style="width:36px;height:36px;font-size:15px">✍</div>
+            <span class="badge badge-success badge-green">Personal</span>
+          </div>
+          <h4>Personal Statement</h4>
+          <p>Tell your story in your own words</p>
+        </div>
+
+        <!-- 10. Recommendation Request -->
+        <div class="template-card" data-category="Personal" onclick="useTemplate('Recommendation Request', `Dear [Professor / Mentor / Supervisor Name],
+
+I hope you are having a wonderful week.
+
+I am writing to inquire if you would feel comfortable writing a strong letter of recommendation on my behalf for my application to [Program, Graduate School, or Organization Name]. Having had the privilege of [Taking Course Name / Working with you on Project Name], your guidance played a seminal role in developing my passion for [Subject/Field].
+
+The submission deadline for the application is [Date]. To make this process as seamless as possible, I have attached:
+• My updated resume / CV
+• A brief summary of my relevant coursework and recent achievements
+• The program criteria and official submission link
+
+I completely understand if your schedule does not permit taking this on. Thank you so much for your ongoing mentorship and for your valuable consideration.
+
+Warmest regards,
+[Your Name]
+[Contact Information / Degree Program]`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-green" style="width:36px;height:36px;font-size:15px">🤝</div>
+            <span class="badge badge-success badge-green">Personal</span>
+          </div>
+          <h4>Recommendation Request</h4>
+          <p>Ask for a recommendation letter</p>
+        </div>
+
+        <!-- 11. Social Media Bio -->
+        <div class="template-card" data-category="Social" onclick="useTemplate('Social Media Bio', `=== OPTION 1: High-Impact & Concise ===
+✨ [Title / Identity] & [Passion]
+💡 Helping [Target Audience] unlock [Core Result]
+📍 Based in [City] | 🔗 [Link in Bio]
+
+=== OPTION 2: Conversational & Story-Driven ===
+Obsessed with [Interest 1], [Interest 2] & great design ☕
+Building modern experiences at @[Company]
+👇 Dive into our latest case study:
+[Link]
+
+=== OPTION 3: Authority & Social Proof ===
+Award-winning [Profession] | Featured in [Media / Publication]
+Empowering [Community] to master [Skill]
+📩 DM for collaborations | [Website URL]`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-pink" style="width:36px;height:36px;font-size:15px">📱</div>
+            <span class="badge badge-pink">Social</span>
+          </div>
+          <h4>Social Media Bio</h4>
+          <p>Write a captivating bio for any platform</p>
+        </div>
+
+        <!-- 12. Instagram Caption -->
+        <div class="template-card" data-category="Social" onclick="useTemplate('Instagram Caption', `Behind the scenes of something we’ve been quietly building for weeks! ✨
+
+Real talk: the end results are only 10% of the journey. Behind every milestone lies hours of iteration, late-night revisions, and trial-and-error that never make the feed. But seeing [Project / Transformation / Milestone] come alive makes every single second worth it.
+
+Question for you: What’s one ambitious goal you’re working toward this month? Drop it in the comments below! 👇
+
+#BehindTheScenes #CreatorEconomy #WorkInProgress #DailyGrind #CreativeFlow #ConsistencyIsKey`)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div class="tool-icon tool-icon-pink" style="width:36px;height:36px;font-size:15px">📸</div>
+            <span class="badge badge-pink">Social</span>
+          </div>
+          <h4>Instagram Caption</h4>
+          <p>Engaging captions for your posts</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template Modal -->
+<div class="modal-overlay" id="template-modal" style="display:none;" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-container">
+    <div style="padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <span id="modal-category" class="badge badge-primary" style="margin-bottom:6px;display:inline-block">Template</span>
+        <h3 id="modal-title" style="font-size:18px;font-weight:700;margin:0">Template Title</h3>
+      </div>
+      <button type="button" id="modal-close-btn" aria-label="Close modal" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted);padding:4px 8px;border-radius:var(--radius-md);line-height:1">✕</button>
+    </div>
+    <div style="padding:20px 24px;flex:1;overflow-y:auto">
+      <label for="modal-content" style="display:block;font-size:12px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px">Template Content (Editable)</label>
+      <textarea id="modal-content" class="form-control" style="width:100%;min-height:260px;font-family:inherit;font-size:14px;line-height:1.6;padding:14px;resize:vertical;" placeholder="Template content..."></textarea>
+    </div>
+    <div style="padding:16px 24px;border-top:1px solid var(--border);background:var(--bg-secondary);border-bottom-left-radius:var(--radius-xl);border-bottom-right-radius:var(--radius-xl);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <button type="button" id="modal-edit-btn" class="btn btn-ghost btn-sm">Edit First</button>
+      <div style="display:flex;gap:10px">
+        <button type="button" id="modal-cancel-btn" class="btn btn-outline btn-sm">Cancel</button>
+        <button type="button" id="modal-use-btn" class="btn btn-primary btn-sm">Use This Template</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="app-mobile-nav">
+  <div class="app-mobile-nav-inner">
+    <a href="dashboard.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></a>
+    <a href="tools.html" class="app-mobile-nav-item active"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Tools</span></a>
+    <a href="history.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg><span>History</span></a>
+    <a href="profile.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></a>
+  </div>
+</nav>
+
+<script src="js/app.js"></script>
+<script>
+// Global function so inline card onclick can invoke it
+function useTemplate(name, content) {
+  const modal = document.getElementById('template-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalContent = document.getElementById('modal-content');
+  const modalCat = document.getElementById('modal-category');
+  
+  if (modalTitle) modalTitle.textContent = name;
+  if (modalContent) modalContent.value = content;
+  
+  // Find card to grab category badge
+  const card = Array.from(document.querySelectorAll('.template-card')).find(c => {
+    return c.querySelector('h4')?.textContent.trim() === name;
+  });
+  if (card && modalCat) {
+    modalCat.textContent = card.dataset.category || 'Template';
+  }
+  
+  if (modal) {
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+  }
+}
+
+function closeTemplateModal() {
+  const modal = document.getElementById('template-modal');
+  if (modal) {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  requireAuth();
+  initAppSidebar();
+
+  // Update credits dot
+  const credits = Credits.get();
+  const dot = document.getElementById('credit-dot');
+  if (dot) {
+    if (credits <= 2) dot.classList.add('empty');
+    else if (credits <= 5) dot.classList.add('low');
+  }
+
+  // Category filter tabs
+  const filterTabs = document.querySelectorAll('.template-category-tab');
+  const cards = document.querySelectorAll('.template-card');
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const selectedCat = tab.dataset.category;
+      cards.forEach(card => {
+        if (selectedCat === 'All' || card.dataset.category === selectedCat) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Modal event listeners
+  const modal = document.getElementById('template-modal');
+  const closeBtn = document.getElementById('modal-close-btn');
+  const cancelBtn = document.getElementById('modal-cancel-btn');
+  const editBtn = document.getElementById('modal-edit-btn');
+  const useBtn = document.getElementById('modal-use-btn');
+  const contentArea = document.getElementById('modal-content');
+  const titleEl = document.getElementById('modal-title');
+
+  if (closeBtn) closeBtn.addEventListener('click', closeTemplateModal);
+  if (cancelBtn) cancelBtn.addEventListener('click', closeTemplateModal);
+
+  // Close when clicking overlay backdrop outside modal
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeTemplateModal();
+    });
+  }
+
+  // Edit First button
+  if (editBtn && contentArea) {
+    editBtn.addEventListener('click', () => {
+      contentArea.focus();
+      showToast('You can edit the template content directly.', 'default');
+    });
+  }
+
+  // Use This Template button
+  if (useBtn && contentArea && titleEl) {
+    useBtn.addEventListener('click', () => {
+      const templateName = titleEl.textContent;
+      const finalContent = contentArea.value;
+
+      copyText(finalContent);
+      History.add({
+        tool: 'Templates',
+        original: templateName,
+        result: finalContent
+      });
+
+      showToast('Template copied and saved to history!', 'success');
+      closeTemplateModal();
+    });
+  }
+});
+</script>
+</body>
+</html>

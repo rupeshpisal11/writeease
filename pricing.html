@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — WriteEase AI</title>
+  <meta name="description" content="Simple, transparent pricing for WriteEase AI. Start free with 10 daily requests or unlock unlimited writing power with Pro." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .pricing-hero {
+      background: linear-gradient(165deg, #f9f9ff 0%, #eef2ff 100%);
+      padding: 96px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .pricing-hero h1 {
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+    .pricing-hero p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    @media (min-width: 860px) {
+      .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .pricing-plan-tag {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+    .pricing-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      min-height: 40px;
+    }
+    .table-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 28px;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border);
+      background: var(--bg-white);
+      box-shadow: var(--shadow-sm);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .comparison-table th {
+      background: var(--bg-secondary);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .comparison-table th:not(:first-child),
+    .comparison-table td:not(:first-child) {
+      text-align: center;
+    }
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    .comparison-table tr:hover td {
+      background: rgba(247, 248, 252, 0.7);
+    }
+    .comparison-table .highlight-col {
+      background: rgba(238, 242, 255, 0.45);
+    }
+    .cta-dark {
+      background: #171923;
+      color: #FFFFFF;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-dark h2 {
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .cta-dark p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 18px;
+      max-width: 580px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .cta-dark .btn-outline {
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+    }
+    .cta-dark .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #FFFFFF;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar"><div class="navbar-inner"><a href="index.html" class="navbar-brand"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><rect width="32" height="32" rx="8" fill="#3157D5"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="23" cy="22" r="3" fill="white"/></svg>WriteEase AI</a><div class="navbar-links"><a href="tools.html">Tools</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a></div><div class="navbar-actions"><a href="login.html" class="btn btn-ghost btn-sm">Log in</a><a href="register.html" class="btn btn-primary btn-sm">Start Free</a><button class="navbar-toggle" id="navbar-toggle" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav><div class="mobile-nav" id="mobile-nav"><div class="mobile-nav-panel"><div class="mobile-nav-header"><span style="color:var(--primary);font-weight:700">WriteEase AI</span><button id="mobile-nav-close" style="padding:6px;border-radius:8px;background:var(--bg-secondary)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div><a href="tools.html">Tools</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><div class="mobile-nav-divider"></div><a href="login.html">Log in</a><a href="register.html" style="color:var(--primary);font-weight:700">Start Free →</a></div></div>
+
+<!-- 1. Hero Section -->
+<section class="pricing-hero">
+  <div class="container">
+    <div class="pricing-hero-inner">
+      <div style="margin-bottom:16px">
+        <span class="badge badge-primary">Pricing</span>
+      </div>
+      <h1 class="display-lg">Simple, transparent pricing</h1>
+      <p>Start free. Upgrade when you need more. Cancel anytime.</p>
+      
+      <!-- 2. Billing toggle (monthly/annual) -->
+      <div style='display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:40px'>
+        <span id='toggle-monthly' style='font-weight:700;color:var(--primary)'>Monthly</span>
+        <label class='toggle'><input type='checkbox' id='billing-toggle'><span class='toggle-slider'></span></label>
+        <span id='toggle-annual' style='font-weight:500;color:var(--text-secondary)'>Annual <span style='background:#ECFDF5;color:#059669;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:4px'>Save 20%</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Three Pricing Cards -->
+<section class="section" style="padding-top:20px">
+  <div class="container">
+    <div class="pricing-grid" style="max-width:960px;margin:0 auto">
+      <!-- Plan: Free -->
+      <div class="pricing-card">
+        <div class="pricing-plan-tag">Free</div>
+        <h3>Starter</h3>
+        <p class="pricing-desc">For casual writers</p>
+        <div class="pricing-price">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-amount">0</span>
+          <span class="pricing-period">/mo</span>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 10 requests/day</li>
+          <li><span class="check">✓</span> All 6 tools</li>
+          <li><span class="check">✓</span> 30-day history</li>
+          <li><span class="check">✓</span> Basic support</li>
+        </ul>
+        <div style="margin-top:28px">
+          <a href="register.html" class="btn btn-outline btn-block">Get started free</a>
+        </div>
+      </div>
+
+      <!-- Plan: Pro (Featured) -->
+      <div class="pricing-card featured">
+        <div class="pricing-featured-badge">MOST POPULAR</div>
+        <div class="pricing-plan-tag" style="color:var(--primary)">Pro</div>
+        <h3>Professional</h3>
+        <p class="pricing-desc">For professionals and students</p>
+        <div class="pricing-price">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-amount" id="pro-price">9</span>
+          <span class="pricing-period">/mo</span>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Unlimited requests</li>
+          <li><span class="check">✓</span> All 6 tools</li>
+          <li><span class="check">✓</span> Unlimited history</li>
+          <li><span class="check">✓</span> Priority support</li>
+          <li><span class="check">✓</span> Advanced tones</li>
+          <li><span class="check">✓</span> No daily limits</li>
+        </ul>
+        <div style="margin-top:28px">
+          <a href="register.html" class="btn btn-primary btn-block">Start Pro Trial</a>
+        </div>
+      </div>
+
+      <!-- Plan: Team -->
+      <div class="pricing-card">
+        <div class="pricing-plan-tag">Team</div>
+        <h3>Enterprise</h3>
+        <p class="pricing-desc">For teams and organizations</p>
+        <div class="pricing-price">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-amount" id="team-price">19</span>
+          <span class="pricing-period">/mo</span>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Everything in Pro</li>
+          <li><span class="check">✓</span> Team collaboration</li>
+          <li><span class="check">✓</span> API access</li>
+          <li><span class="check">✓</span> Custom templates</li>
+          <li><span class="check">✓</span> Dedicated support</li>
+        </ul>
+        <div style="margin-top:28px">
+          <a href="mailto:hello@writeease.ai" class="btn btn-outline btn-block">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Feature Comparison Table -->
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="headline-lg">Compare all plans</h2>
+      <p>A side-by-side feature comparison to help you find the right fit.</p>
+    </div>
+    <div class="table-container" style="max-width:960px;margin:0 auto">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:40%">Features</th>
+            <th style="width:20%">Free</th>
+            <th style="width:20%" class="highlight-col">Pro</th>
+            <th style="width:20%">Team</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Daily requests</td>
+            <td>10/day</td>
+            <td class="highlight-col"><strong>Unlimited</strong></td>
+            <td><strong>Unlimited</strong></td>
+          </tr>
+          <tr>
+            <td>All 6 AI tools</td>
+            <td><span class="check" style="color:var(--success);font-weight:700;font-size:16px">✓</span></td>
+            <td class="highlight-col"><span class="check" style="color:var(--success);font-weight:700;font-size:16px">✓</span></td>
+            <td><span class="check" style="color:var(--success);font-weight:700;font-size:16px">✓</span></td>
+          </tr>
+          <tr>
+            <td>Writing history</td>
+            <td>30 days</td>
+            <td class="highlight-col"><strong>Unlimited</strong></td>
+            <td><strong>Unlimited</strong></td>
+          </tr>
+          <tr>
+            <td>Priority processing</td>
+            <td><span class="cross" style="color:var(--text-muted);font-weight:700;font-size:16px">✗</span></td>
+            <td class="highlight-col"><span class="check" style="color:var(--success);font-weight:700;font-size:16px">✓</span></td>
+            <td><span class="check" style="color:var(--success);font-weight:700;font-size:16px">✓</span></td>
+          </tr>
+          <tr>
+            <td>Team collaboration</td>
+            <td><span class="cross" style="color:var(--text-muted);font-weight:700;font-size:16px">✗</span></td>
+            <td class="highlight-col"><span class="cross" style="color:var(--text-muted);font-weight:700;font-size:16px">✗</span></td>
+            <td><span class="check" style="color:var(--success);font-weight:700;font-size:16px">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 5. FAQ Section -->
+<section class="section">
+  <div class="container container-narrow">
+    <div class="section-header">
+      <span class="badge badge-primary">FAQ</span>
+      <h2 class="headline-lg">Frequently Asked Questions</h2>
+      <p>Common questions about WriteEase AI plans, billing, and features.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">What happens when I reach my daily limit? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>You'll see a limit message. Wait 24h or upgrade to Pro.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I cancel my Pro subscription anytime? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes, cancel anytime with no penalties.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is there a student discount? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Not currently, but the free plan covers most student needs.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What is your refund policy? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>7-day refund window. See <a href="refund.html" style="color:var(--primary);text-decoration:underline">refund.html</a> for details.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Bottom CTA Section -->
+<section class="cta-dark">
+  <div class="container">
+    <div style="max-width:680px;margin:0 auto">
+      <h2 class="headline-lg">Ready to start writing smarter?</h2>
+      <p>Join thousands of writers, students, and professionals who communicate better with WriteEase AI.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="register.html" class="btn btn-primary btn-xl">Start Writing Free</a>
+        <a href="tools.html" class="btn btn-outline btn-xl">Explore Tools</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-brand-name"><svg viewBox="0 0 32 32" fill="none" width="22" height="22"><rect width="32" height="32" rx="8" fill="white" fill-opacity="0.15"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="23" cy="22" r="3" fill="white"/></svg>WriteEase AI</div><p>Write smarter. Express better.</p></div><div class="footer-col"><h4>Tools</h4><a href="paraphraser.html">Paraphraser</a><a href="humanizer.html">AI Humanizer</a><a href="grammar.html">Grammar Fixer</a><a href="email.html">Email Writer</a><a href="templates.html">Templates</a><a href="plagiarism.html">Plagiarism Checker</a></div><div class="footer-col"><h4>Product</h4><a href="tools.html">All Tools</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="login.html">Log in</a><a href="register.html">Sign up</a></div><div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refund.html">Refund Policy</a></div></div><div class="footer-bottom"><span>© 2024 WriteEase AI. All rights reserved.</span><div style="display:flex;gap:16px"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
+
+<script src="js/app.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => { initMobileNav(); initFAQ(); });</script>
+<script>
+document.getElementById('billing-toggle').addEventListener('change', function() {
+  const annual = this.checked;
+  document.getElementById('pro-price').textContent = annual ? '7' : '9';
+  document.getElementById('team-price').textContent = annual ? '15' : '19';
+  document.getElementById('toggle-monthly').style.color = annual ? 'var(--text-secondary)' : 'var(--primary)';
+  document.getElementById('toggle-annual').style.color = annual ? 'var(--primary)' : 'var(--text-secondary)';
+  document.getElementById('toggle-monthly').style.fontWeight = annual ? '500' : '700';
+  document.getElementById('toggle-annual').style.fontWeight = annual ? '700' : '500';
+});
+</script>
+</body>
+</html>

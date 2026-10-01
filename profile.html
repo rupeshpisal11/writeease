@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile — WriteEase AI</title>
+  <meta name="description" content="Manage your WriteEase AI account profile, subscription plan, usage, and security settings." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+<div class="app-layout">
+  <div class="app-sidebar" id="app-sidebar">
+    <div class="app-sidebar-logo">
+      <svg viewBox="0 0 32 32" fill="none" width="22" height="22"><rect width="32" height="32" rx="8" fill="#3157D5"/><path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="23" cy="22" r="3" fill="white"/></svg>
+      WriteEase AI
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Overview</div>
+      <a href="dashboard.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Dashboard
+      </a>
+      <div class="sidebar-section-label" style="margin-top:12px">AI Tools</div>
+      <a href="paraphraser.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⟳</span> Paraphraser</a>
+      <a href="humanizer.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">☺</span> AI Humanizer</a>
+      <a href="grammar.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">✓</span> Grammar Fixer</a>
+      <a href="email.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">✉</span> Email Writer</a>
+      <a href="templates.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⊟</span> Templates</a>
+      <a href="plagiarism.html" class="sidebar-link"><span style="font-size:16px;width:18px;text-align:center;display:inline-block">⊗</span> Plagiarism</a>
+      <div class="sidebar-section-label" style="margin-top:12px">Account</div>
+      <a href="history.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        History
+      </a>
+      <a href="profile.html" class="sidebar-link active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile
+      </a>
+      <a href="settings.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        Settings
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" data-action="logout" class="sidebar-link" style="color:var(--error)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Log out
+      </a>
+    </div>
+  </div>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <div class="app-main">
+    <div class="app-topbar">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <span class="app-topbar-title">Profile</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="credit-widget"><div class="credit-dot" id="credit-dot"></div><span id="credit-count">10</span> credits</div>
+        <a href="profile.html"><div class="profile-avatar" style="width:34px;height:34px;font-size:14px" id="topbar-avatar">U</div></a>
+      </div>
+    </div>
+    <div class="app-content">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <div class="profile-avatar" id="profile-big-avatar" style="width:80px;height:80px;font-size:32px">U</div>
+        <div class="profile-info">
+          <h2 id="profile-name" style="margin:0 0 4px 0">User Name</h2>
+          <p id="profile-email" style="margin:0 0 6px 0">user@example.com</p>
+          <div class="profile-badge badge-primary">Free Plan</div>
+          <p style="font-size:13px;color:var(--text-secondary);margin:8px 0 0 0">
+            <small>Member since <span id="profile-joined">Recently</span></small>
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 1: Account Information -->
+      <div class="settings-section">
+        <div class="settings-section-header">Account Information</div>
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <h4>Full Name</h4>
+            <p>Your display name across the platform</p>
+          </div>
+          <div style="flex:1;max-width:320px;min-width:220px">
+            <input type="text" id="prof-name" class="form-control" placeholder="Enter your full name" />
+          </div>
+        </div>
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <h4>Email Address</h4>
+            <p>The email used to log in to your account</p>
+          </div>
+          <div style="flex:1;max-width:320px;min-width:220px">
+            <input type="email" id="prof-email" class="form-control" placeholder="Enter your email" />
+          </div>
+        </div>
+        <div class="settings-row" style="background:var(--bg-secondary)">
+          <div class="settings-row-info">
+            <p style="margin:0;font-size:12px;color:var(--text-muted)">Changes take effect immediately on this browser.</p>
+          </div>
+          <button type="button" id="save-profile-btn" class="btn btn-primary btn-sm">Save Changes</button>
+        </div>
+      </div>
+
+      <!-- Section 2: Subscription -->
+      <div class="settings-section">
+        <div class="settings-section-header">Subscription</div>
+        <div style="padding:20px">
+          <div class="plan-card active">
+            <div>
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                <h3 style="margin:0;font-size:18px;font-weight:700">Free Plan</h3>
+                <span class="badge badge-success">Active</span>
+              </div>
+              <p style="font-size:13px;color:var(--text-secondary);margin:0">10 requests per day • Standard AI generation speed</p>
+            </div>
+            <a href="pricing.html" class="btn btn-primary">Upgrade to Pro</a>
+          </div>
+          <div style="margin-top:16px;font-size:13px;color:var(--text-secondary)">
+            Need more generations or priority AI access? Explore our <a href="pricing.html" style="color:var(--primary);font-weight:600">Pro plans</a>. All purchases are backed by our <a href="refund.html" style="color:var(--primary);font-weight:600">Refund Policy</a>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Usage This Month -->
+      <div class="settings-section">
+        <div class="settings-section-header">Usage This Month</div>
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <h4>Daily Credits Remaining</h4>
+            <p>Credits available for paraphrasing, humanizing, and editing</p>
+          </div>
+          <div style="font-size:18px;font-weight:700;color:var(--primary)">
+            <span id="usage-credits">10</span> / 10 credits
+          </div>
+        </div>
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <h4>Total Saved Writings</h4>
+            <p>Generations stored in your personal writing history</p>
+          </div>
+          <div style="font-size:18px;font-weight:700">
+            <span id="usage-history-count">0</span> writings
+          </div>
+        </div>
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <h4>Credit Reset Schedule</h4>
+            <p>Automatic replenishment cycle for free tier</p>
+          </div>
+          <div style="font-size:14px;font-weight:600;color:var(--text-secondary)">
+            Resets daily at 00:00 UTC
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Danger Zone -->
+      <div class="settings-section" style="border:1.5px solid rgba(186,26,26,0.3)">
+        <div class="settings-section-header" style="background:#FFF1F2;color:var(--error);border-bottom:1px solid rgba(186,26,26,0.2)">
+          Danger Zone
+        </div>
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <h4>Delete Writing History</h4>
+            <p>Permanently erase all generated writings and templates from your device</p>
+          </div>
+          <button type="button" id="del-history-btn" class="btn btn-danger btn-sm">Delete History</button>
+        </div>
+        <div class="settings-row">
+          <div class="settings-row-info">
+            <h4>Log Out</h4>
+            <p>End your session on this browser</p>
+          </div>
+          <button type="button" id="logout-btn" class="btn btn-outline btn-sm" style="color:var(--error);border-color:var(--error)">Log Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="app-mobile-nav">
+  <div class="app-mobile-nav-inner">
+    <a href="dashboard.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></a>
+    <a href="tools.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Tools</span></a>
+    <a href="history.html" class="app-mobile-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg><span>History</span></a>
+    <a href="profile.html" class="app-mobile-nav-item active"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></a>
+  </div>
+</nav>
+
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  requireAuth();
+  initAppSidebar();
+
+  // Load user data
+  let user = Auth.get() || {
+    name: 'Demo Writer',
+    email: 'writer@writeease.ai',
+    plan: 'free',
+    joinedAt: new Date().toISOString()
+  };
+
+  const nameEl = document.getElementById('profile-name');
+  const emailEl = document.getElementById('profile-email');
+  const avatarBigEl = document.getElementById('profile-big-avatar');
+  const joinedEl = document.getElementById('profile-joined');
+  const profNameInput = document.getElementById('prof-name');
+  const profEmailInput = document.getElementById('prof-email');
+  const saveBtn = document.getElementById('save-profile-btn');
+
+  // Populate header and inputs
+  const displayName = user.name || (user.email ? user.email.split('@')[0] : 'Writer');
+  const displayEmail = user.email || 'writer@writeease.ai';
+  const initial = displayName.charAt(0).toUpperCase();
+
+  if (nameEl) nameEl.textContent = displayName;
+  if (emailEl) emailEl.textContent = displayEmail;
+  if (avatarBigEl) avatarBigEl.textContent = initial;
+  if (profNameInput) profNameInput.value = displayName;
+  if (profEmailInput) profEmailInput.value = displayEmail;
+
+  // Joined date formatting
+  if (joinedEl) {
+    if (user.joinedAt) {
+      try {
+        const d = new Date(user.joinedAt);
+        joinedEl.textContent = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      } catch {
+        joinedEl.textContent = 'Recently';
+      }
+    } else {
+      joinedEl.textContent = 'Recently';
+    }
+  }
+
+  // Update credits and history count
+  const credits = Credits.get();
+  const hist = History.get();
+
+  const credUsageEl = document.getElementById('usage-credits');
+  const histUsageEl = document.getElementById('usage-history-count');
+  const creditCountTopbar = document.getElementById('credit-count');
+  const creditDot = document.getElementById('credit-dot');
+
+  if (credUsageEl) credUsageEl.textContent = credits;
+  if (histUsageEl) histUsageEl.textContent = hist.length;
+  if (creditCountTopbar) creditCountTopbar.textContent = credits;
+  if (creditDot) {
+    if (credits <= 2) creditDot.classList.add('empty');
+    else if (credits <= 5) creditDot.classList.add('low');
+  }
+
+  // Save profile changes
+  if (saveBtn) {
+    saveBtn.addEventListener('click', () => {
+      const newName = profNameInput.value.trim();
+      const newEmail = profEmailInput.value.trim();
+
+      if (!newName) {
+        showToast('Please provide your name.', 'error');
+        profNameInput.focus();
+        return;
+      }
+      if (!newEmail || !newEmail.includes('@')) {
+        showToast('Please provide a valid email address.', 'error');
+        profEmailInput.focus();
+        return;
+      }
+
+      user.name = newName;
+      user.email = newEmail;
+      Auth.set(user);
+
+      // Update UI elements
+      if (nameEl) nameEl.textContent = newName;
+      if (emailEl) emailEl.textContent = newEmail;
+      const newInitial = newName.charAt(0).toUpperCase();
+      if (avatarBigEl) avatarBigEl.textContent = newInitial;
+      
+      const topbarAvatar = document.getElementById('topbar-avatar');
+      if (topbarAvatar) topbarAvatar.textContent = newInitial;
+      const topbarName = document.getElementById('topbar-name');
+      if (topbarName) topbarName.textContent = newName;
+
+      showToast('Profile updated successfully!', 'success');
+    });
+  }
+
+  // Delete History in Danger Zone
+  const delHistoryBtn = document.getElementById('del-history-btn');
+  if (delHistoryBtn) {
+    delHistoryBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to permanently delete your entire writing history?')) {
+        History.clear();
+        if (histUsageEl) histUsageEl.textContent = '0';
+        showToast('Writing history deleted.', 'default');
+      }
+    });
+  }
+
+  // Log Out button
+  const logoutBtn = document.getElementById('logout-btn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      Auth.logout();
+    });
+  }
+});
+</script>
+</body>
+</html>
